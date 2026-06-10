@@ -1,0 +1,6 @@
+{
+  "name": "KuDesign Portfolio",
+  "description": "Concept design and development portfolio showcasing precision minimalism.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
