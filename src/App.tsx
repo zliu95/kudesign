@@ -1,20 +1,29 @@
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { Services } from './components/Services';
-import { Portfolio } from './components/Portfolio';
-import { About } from './components/About';
-import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { Home } from './pages/Home';
+import { ImageIOPlugin } from './pages/ImageIOPlugin';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   return (
     <div className="min-h-screen bg-background text-on-surface">
+      <ScrollToTop />
       <Navbar />
-      <Hero />
-      <Services />
-      <Portfolio />
-      <About />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/image-io" element={<ImageIOPlugin />} />
+      </Routes>
       <Footer />
     </div>
   );
